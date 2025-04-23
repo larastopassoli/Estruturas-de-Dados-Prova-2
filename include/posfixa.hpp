@@ -28,5 +28,6 @@
  * operadores em excesso, operadores inválidos ou divisão por zero).
  */
 int posfixa(Fila<char> &entrada);
+//int posfixa(Fila<char> &entrada) {
 
 

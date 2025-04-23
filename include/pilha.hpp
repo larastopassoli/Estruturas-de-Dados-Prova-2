@@ -89,25 +89,53 @@ class Pilha {
 };
 
 template <class T>
-Pilha<T>::Pilha(size_t capacidade) {}
+Pilha<T>::Pilha(size_t capacidade) {
+
+  cout<<"Qual será a capacidade maxima da pilha";
+  cin>>capacidade;
+  stack<capacidade>pilha;
+  stack<char>pilha;//inicializa a pilha 
+
+
+}
 
 template <class T>
-Pilha<T>::~Pilha() {}
+Pilha<T>::~Pilha() {
+
+}
 
 template <class T>
-void Pilha<T>::empilhar(const T& valor) {}
+void Pilha<T>::empilhar(const T& valor) {
+  pilha.push();
+}
 
 template <class T>
-T Pilha<T>::desempilhar() {}
+T Pilha<T>::desempilhar() {
+  cout<<"O elemento do topo da lista é "<<pila.front()<<endl;
+  pilha.pop();
+}
 
 template <class T>
-T& Pilha<T>::topo() {}
+T& Pilha<T>::topo() {
+    pilha.top();
+    cout<<" o valor que está na frente é "<<pilha.front()<<endl;
+}
 
 template <class T>
-const T& Pilha<T>::topo() const {}
+const T& Pilha<T>::topo() const {
+  if (pilha.empty()){
+    return true;
+  }else{
+    return false;
+  }
+}
 
 template <class T>
-bool Pilha<T>::esta_vazia() const {}
+bool Pilha<T>::esta_vazia() const {
+ return pila.empty();
+}
 
 template <class T>
-bool Pilha<T>::esta_cheia() const {}
+bool Pilha<T>::esta_cheia() const {
+  return pilha.size() >= capacidade;
+}

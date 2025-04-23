@@ -102,25 +102,60 @@ class Fila {
 };
 
 template <class T>
-Fila<T>::Fila(size_t capacidade) {}
+Fila<T>::Fila(size_t capacidade) {
+  
+}
 
 template <class T>
 Fila<T>::~Fila() {}
 
 template <class T>
-void Fila<T>::enfileirar(const T& valor) {}
+void Fila<T>::enfileirar(const T& valor) {
+  if (esta_cheia()) {
+    throw std::runtime_error("Fila cheia");
+  }
+  fila.push(valor);
+}
 
 template <class T>
-T Fila<T>::desenfileirar() {}
+T Fila<T>::desenfileirar() {
+  if (esta_vazia()) {
+    throw std::runtime_error("Fila vazia");
+  }
+  T valor = fila.front();
+  fila.pop();
+  return valor;
+}
 
 template <class T>
-T& Fila<T>::frente() {}
+T& Fila<T>::frente() {
+  if (esta_vazia()) {
+    throw std::runtime_error("Fila vazia");
+  }
+  return fila.front();
+}
 
 template <class T>
-const T& Fila<T>::frente() const {}
+const T& Fila<T>::frente() const {
+  if (fila.empty()){
+    return true;
+  }else if(!fila.empty()){
+    return false;
+  }
+}
 
 template <class T>
-bool Fila<T>::esta_vazia() const {}
+bool Fila<T>::esta_vazia() const {
+  return fila.empty();
+}
 
 template <class T>
-bool Fila<T>::esta_cheia() const {}
+bool Fila<T>::esta_cheia() const {
+  return fila.size() >= capacidade;
+}
+
+
+
+
+
+
